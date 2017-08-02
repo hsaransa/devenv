@@ -4,14 +4,27 @@
 " Screw the old vim
 set nocompatible
 
+set t_Co=256
+
+" Vundle thing
+
+set nocompatible              " be iMproved, required
 filetype off                  " required
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" Make ycm less verbose
+
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_enable_diagnostic_signs = 0
+let g:ycm_enable_diagnostic_highlighting = 0
 
 " OSX backspace fix
 set backspace=2
@@ -37,8 +50,7 @@ set backupdir=~/tmp
 set hidden
 
 " My background is black so make text brighter
-"colorscheme darkblue
-colorscheme default
+colorscheme slate
 "colorscheme default
 
 set visualbell
@@ -68,6 +80,8 @@ set clipboard+=unnamedplus
 let yacc_uses_cpp = 1
 let c_gnu = 1
 let c_space_errors = 1
+
+let c_minlines=10000
 
 let java_highlight_all=1
 let java_highlight_debug=1
@@ -133,7 +147,9 @@ au BufNewFile,BufRead *.json call Set_No_Tabs(4)
 
 au FileType gitcommit set tw=70
 
+"
 " glsl real-time updating
+"
 
 set updatetime=500
 
@@ -159,39 +175,15 @@ map <F3> <Esc>:bn<CR>
 
 map <F5> <Esc>:w<CR>
 
-map <F6> <Esc>:%!$(git rev-parse --show-toplevel)/external/clangformat/linux/clang-format -style file<CR>
+map <F6> <Esc>zzmx:%!$(git rev-parse --show-toplevel)/external/clangformat/linux/clang-format -style file<CR>`xzz
+
 set makeprg=scons
 map <F7> <Esc>:wa<CR>:make -j1 -C $(git rev-parse --show-toplevel) errorcompile=1<CR>
 map <F8> <Esc>:wa<CR>:make -j1 errorcompile=1<CR>
 
-"
-" Perforce auto check-out
-"
-
-" Set a buffer-local variable to the perforce path, if this file is under the perforce root.
-function IsUnderPerforce()
-  if exists("$P4HOME")
-    if expand("%:p") =~ ("^" . $P4HOME)
-      let b:p4path = substitute(expand("%:p"), $P4HOME, "//depot", "")
-    endif
-  endif
-endfunction
-
-" Confirm with the user, then checkout a file from perforce.
-function P4Checkout()
-  if exists("b:p4path")
-"    if (confirm("Checkout from Perforce?", "&Yes\n&No", 1) == 1)
-      call system("p4 edit " . b:p4path . " > /dev/null")
-      if v:shell_error == 0
-        set noreadonly
-      endif
-"    endif
-  endif
-endfunction
-
-if !exists("au_p4_cmd")
-  let au_p4_cmd=1
-  au BufEnter * call IsUnderPerforce()
-  au FileChangedRO * call P4Checkout()
-endif
-
+map <F4><F1> <Esc>:YcmCompleter GoToDeclaration<CR>
+map <F4><F2> <Esc>:YcmCompleter GoToDefinition<CR>
+map <F4><F3> <Esc>:YcmCompleter GoToReferences<CR>
+map <F4><F4> <Esc>:YcmCompleter GoTo<CR>
+map <F4>1 <Esc>:YcmCompleter GoToInclude<CR>
+map <F4>2 <Esc>:YcmCompleter FixIt<CR>
