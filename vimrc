@@ -175,7 +175,8 @@ endfunction
 map <F2> <Esc>:bp<CR>
 map <F3> <Esc>:bn<CR>
 
-map <F5> <Esc>:w<CR>
+map <F5><F5> <Esc>"*p
+map <F5><F1> <Esc>"*p
 
 map <F6> <Esc>zzmx:%!$(git rev-parse --show-toplevel)/external/clangformat/linux/clang-format -style file<CR>`xzz
 
