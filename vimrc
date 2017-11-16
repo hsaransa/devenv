@@ -16,16 +16,17 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'derekwyatt/vim-scala'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Make ycm less verbose
 
-let g:ycm_show_diagnostics_ui = 0
+let g:ycm_show_diagnostics_ui = 1
 let g:ycm_enable_diagnostic_signs = 0
-let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_enable_diagnostic_highlighting = 1
 
 " OSX backspace fix
 set backspace=2
@@ -178,7 +179,7 @@ map <F3> <Esc>:bn<CR>
 map <F5><F5> <Esc>"*p
 map <F5><F1> <Esc>"*p
 
-map <F6> <Esc>zzmx:%!$(git rev-parse --show-toplevel)/external/clangformat/linux/clang-format -style file<CR>`xzz
+map <F6> <Esc>zzmx:%!$(git rev-parse --show-toplevel)/clang-format.sh<CR>`xzz
 
 set makeprg=scons
 map <F7> <Esc>:wa<CR>:make -j1 -C $(git rev-parse --show-toplevel) errorcompile=1<CR>
