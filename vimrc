@@ -22,6 +22,8 @@ Plugin 'derekwyatt/vim-scala'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+set encoding=utf-8
+
 " Make ycm less verbose
 
 let g:ycm_show_diagnostics_ui = 1
