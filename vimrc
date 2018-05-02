@@ -150,6 +150,8 @@ set errorformat+=ERROR\ %f:%l.%c\ %m
 
 au BufNewFile,BufRead *.json call Set_No_Tabs(4)
 
+au BufNewFile,BufRead CMakeLists.txt call Set_No_Tabs(4)
+
 au FileType gitcommit set tw=70
 
 "
