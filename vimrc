@@ -21,6 +21,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'derekwyatt/vim-scala'
 call vundle#end()            " required
 filetype plugin indent on    " required
+set encoding=utf-8
 
 set encoding=utf-8
 
