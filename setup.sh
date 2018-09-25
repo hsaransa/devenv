@@ -15,6 +15,6 @@ vim +PluginInstall +qall
 
 pushd .
 cd ~/.vim/bundle/YouCompleteMe
-./install.py --clang-completer
+./install.py --clang-completer --racer-completer
 popd
 

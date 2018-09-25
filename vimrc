@@ -19,6 +19,7 @@ Plugin 'Valloric/YouCompleteMe'
 " Plugin 'scrooloose/syntastic'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'rust-lang/rust.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 set encoding=utf-8
@@ -30,6 +31,7 @@ set encoding=utf-8
 let g:ycm_show_diagnostics_ui = 1
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_enable_diagnostic_highlighting = 1
+let g:ycm_rust_src_path = $HOME.'/.cargo/bin'
 
 " OSX backspace fix
 set backspace=2
@@ -152,6 +154,12 @@ set errorformat+=ERROR\ %f:%l.%c\ %m
 au BufNewFile,BufRead *.json call Set_No_Tabs(4)
 
 au BufNewFile,BufRead CMakeLists.txt call Set_No_Tabs(4)
+
+au BufNewFile,BufRead *.html call Set_No_Tabs(2)
+
+au BufNewFile,BufRead *.turse call Set_No_Tabs(4)
+au BufNewFile,BufRead *.kupla call Set_No_Tabs(4)
+au BufNewFile,BufRead *.kupla set syntax=kupla
 
 au FileType gitcommit set tw=70
 
