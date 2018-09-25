@@ -19,6 +19,7 @@ Plugin 'Valloric/YouCompleteMe'
 " Plugin 'scrooloose/syntastic'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'rust-lang/rust.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 set encoding=utf-8
