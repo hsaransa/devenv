@@ -161,6 +161,8 @@ au BufNewFile,BufRead *.turse call Set_No_Tabs(4)
 au BufNewFile,BufRead *.kupla call Set_No_Tabs(4)
 au BufNewFile,BufRead *.kupla set syntax=kupla
 
+au BufNewFile,BufRead *.proto call Set_No_Tabs(4)
+
 au FileType gitcommit set tw=70
 
 "
