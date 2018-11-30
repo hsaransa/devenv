@@ -5,6 +5,7 @@
 set nocompatible
 
 set t_Co=256
+"set termguicolors
 
 " Vundle thing
 

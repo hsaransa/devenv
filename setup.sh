@@ -15,5 +15,7 @@ vim +PluginInstall +qall
 
 pushd .
 cd ~/.vim/bundle/YouCompleteMe
-./install.py --clang-completer --racer-completer --js-completer
+./install.py --all # --clang-completer --racer-completer --js-completer
 popd
+
+echo "source-file `pwd`/tmux.conf" > ~/.tmux.conf
