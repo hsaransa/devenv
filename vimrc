@@ -115,9 +115,10 @@ endfunction
 au BufNewFile,BufRead *.rb call Set_No_Tabs(2)
 au BufNewFile,BufRead *.py call Set_No_Tabs(4)
 au BufNewFile,BufRead *.puuro call Set_No_Tabs(4)
-au BufNewFile,BufRead *.js call Set_No_Tabs(4)
-au BufNewFile,BufRead *.ts call Set_No_Tabs(4)
 au BufNewFile,BufRead *.scm call Set_No_Tabs(2)
+
+au BufNewFile,BufRead *.js call Set_No_Tabs(2)
+au BufNewFile,BufRead *.ts call Set_No_Tabs(2)
 
 au BufNewFile,BufRead *.java call Set_No_Tabs(4)
 
