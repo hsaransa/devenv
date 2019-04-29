@@ -197,7 +197,7 @@ map <F2> <Esc>:bp<CR>
 map <F3> <Esc>:bn<CR>
 
 map <F5><F5> <Esc>"*p
-map <F5><F1> <Esc>"*p
+map <F5><F1> <Esc>"+p
 
 map <F6> <Esc>zzmx:%!$(git rev-parse --show-toplevel)/clang-format.sh<CR>`xzz
 
