@@ -21,6 +21,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'rust-lang/rust.vim'
+Plugin 'Chiel92/vim-autoformat'
 call vundle#end()            " required
 filetype plugin indent on    " required
 set encoding=utf-8
@@ -117,8 +118,8 @@ au BufNewFile,BufRead *.py call Set_No_Tabs(4)
 au BufNewFile,BufRead *.puuro call Set_No_Tabs(4)
 au BufNewFile,BufRead *.scm call Set_No_Tabs(2)
 
-au BufNewFile,BufRead *.js call Set_No_Tabs(2)
-au BufNewFile,BufRead *.ts call Set_No_Tabs(2)
+au BufNewFile,BufRead *.js call Set_No_Tabs(4)
+au BufNewFile,BufRead *.ts call Set_No_Tabs(4)
 
 au BufNewFile,BufRead *.java call Set_No_Tabs(4)
 
@@ -157,13 +158,15 @@ au BufNewFile,BufRead *.json call Set_No_Tabs(4)
 
 au BufNewFile,BufRead CMakeLists.txt call Set_No_Tabs(4)
 
-au BufNewFile,BufRead *.html call Set_No_Tabs(2)
+au BufNewFile,BufRead *.html call Set_Tabs(2)
 
 au BufNewFile,BufRead *.turse call Set_No_Tabs(4)
 au BufNewFile,BufRead *.kupla call Set_No_Tabs(4)
 au BufNewFile,BufRead *.kupla set syntax=kupla
 
 au BufNewFile,BufRead *.proto call Set_No_Tabs(4)
+
+au BufNewFile,BufRead *.sh call Set_No_Tabs(2)
 
 au FileType gitcommit set tw=70
 
@@ -207,4 +210,9 @@ map <F4><F2> <Esc>:YcmCompleter GoToDefinition<CR>
 map <F4><F3> <Esc>:YcmCompleter GoToReferences<CR>
 map <F4><F4> <Esc>:YcmCompleter GoTo<CR>
 map <F4>1 <Esc>:YcmCompleter GoToInclude<CR>
-map <F4>2 <Esc>:YcmCompleter FixIt<CR>
+
+
+" Samuli << I trust this guy << I was wrong, I need J
+"nnoremap J }
+"nnoremap K {
+
