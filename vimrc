@@ -158,7 +158,8 @@ au BufNewFile,BufRead *.json call Set_No_Tabs(4)
 
 au BufNewFile,BufRead CMakeLists.txt call Set_No_Tabs(4)
 
-au BufNewFile,BufRead *.html call Set_Tabs(2)
+au BufNewFile,BufRead *.html call Set_No_Tabs(4)
+au BufNewFile,BufRead *.css call Set_No_Tabs(4)
 
 au BufNewFile,BufRead *.turse call Set_No_Tabs(4)
 au BufNewFile,BufRead *.kupla call Set_No_Tabs(4)
@@ -199,7 +200,8 @@ map <F3> <Esc>:bn<CR>
 map <F5><F5> <Esc>"*p
 map <F5><F1> <Esc>"+p
 
-map <F6> <Esc>zzmx:%!$(git rev-parse --show-toplevel)/clang-format.sh<CR>`xzz
+map <F6> :Autoformat<CR>
+"<Esc>zzmx:%!$(git rev-parse --show-toplevel)/clang-format.sh<CR>`xzz
 
 set makeprg=scons
 map <F7> <Esc>:wa<CR>:make -j1 -C $(git rev-parse --show-toplevel) errorcompile=1<CR>
@@ -210,6 +212,7 @@ map <F4><F2> <Esc>:YcmCompleter GoToDefinition<CR>
 map <F4><F3> <Esc>:YcmCompleter GoToReferences<CR>
 map <F4><F4> <Esc>:YcmCompleter GoTo<CR>
 map <F4>1 <Esc>:YcmCompleter GoToInclude<CR>
+map <F9> :YcmCompleter FixIt<CR>
 
 
 " Samuli << I trust this guy << I was wrong, I need J
