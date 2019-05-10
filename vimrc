@@ -22,6 +22,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'rust-lang/rust.vim'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'morhetz/gruvbox'
 call vundle#end()            " required
 filetype plugin indent on    " required
 set encoding=utf-8
@@ -59,8 +60,10 @@ set backupdir=~/tmp
 set hidden
 
 " My background is black so make text brighter
-colorscheme slate
+"silent! colorscheme slate
+silent! colorscheme gruvbox
 "colorscheme default
+set background=dark
 
 set visualbell
 
