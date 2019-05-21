@@ -23,11 +23,14 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'rust-lang/rust.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'morhetz/gruvbox'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'wincent/terminus'
 call vundle#end()            " required
 filetype plugin indent on    " required
-set encoding=utf-8
 
 set encoding=utf-8
+
+set updatetime=200
 
 " Make ycm less verbose
 
