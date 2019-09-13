@@ -24,7 +24,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'morhetz/gruvbox'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'wincent/terminus'
+"Plugin 'wincent/terminus'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -164,7 +164,7 @@ au BufNewFile,BufRead *.json call Set_No_Tabs(4)
 
 au BufNewFile,BufRead CMakeLists.txt call Set_No_Tabs(4)
 
-au BufNewFile,BufRead *.html call Set_No_Tabs(4)
+au BufNewFile,BufRead *.html call Set_No_Tabs(2)
 au BufNewFile,BufRead *.css call Set_No_Tabs(4)
 
 au BufNewFile,BufRead *.turse call Set_No_Tabs(4)
